@@ -1,0 +1,11 @@
+graph = erdos.renyi.game(100, p.or.m = 0.05)
+summary(graph)
+V(graph)
+E(graph)
+E(graph)$weight <- runif(length(E(graph)), 0.01, 1)
+summary(graph)
+degree(graph)
+hist(degree(graph))
+clusters(graph)
+pr = page.rank(graph)$vector
+plot(graph, vertex.size=pr*1000)
