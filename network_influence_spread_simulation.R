@@ -53,7 +53,7 @@ for(attempt in 1:random_attempts_count) {
   # plot the graph after 10 propagation iterations & save it to file
   jpeg(as.character(plot_file_names[attempt]), width = 1280, height = 768)
   plot(graph, rescale = TRUE, ylim=c(-1,1), xlim=c(-1.1,0.9), edge.arrow.size = .15, asp = 0, 
-       vertex.label=NA, vertex.size=2.5 + 1.5 * as.matrix(size_matrix), layout=layout.drl(graph))
+       vertex.label=NA, vertex.size=2.5 + 1.5 * as.matrix(size_matrix), layout=layout.drl(graph), main = paste("Random attempt no. ", attempt))
   
   legend(-1.15, .75, y.intersp = .75, xjust = .5, yjust = .5, legend=as.vector(legend_descriptions), bty = "n", fill = plot_colors, cex=1.5)
   dev.off() 
