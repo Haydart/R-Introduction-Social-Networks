@@ -17,21 +17,21 @@ print(ecount(graph))
 # mark all nodes as non-infected
 for(vertex_index in V(graph)) {
   V(graph)[vertex_index]$infected = F
+  V(graph)[vertex_index]$color = "green"
 }
 print(V(graph)$infected)
 
 # set a random node to be infected
 random_index = sample(1:vcount(graph), 1)
+print(random_index)
 V(graph)[random_index]$infected = T
 
-plot(graph, rescale = TRUE, ylim=c(-.8,.8),xlim=c(-.8,.8), asp = 0, vertex.label=NA, vertex.size=2, layout=layout.drl(graph))
-
 #infect neighbors of sampled node
-for(neighbor in neighbors(graph, V(graph)[random_index])){
+for(neighbor in neighbors(graph, V(graph)[random_index])) {
   V(graph)[neighbor]$infected=T
   V(graph)[neighbor]$color="red"
 }
 
-
+plot(graph, rescale = TRUE, ylim=c(-.8,.8),xlim=c(-.8,.8), asp = 0, vertex.label=NA, vertex.size=2, layout=layout.drl(graph))
 
 
