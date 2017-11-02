@@ -27,12 +27,17 @@ print(random_index)
 V(graph)[random_index]$infected = T
 V(graph)[random_index]$color = "yellow"
 
+# create 0-init matrix where the source-of-infection node is 1
+size_matrix = matrix(0, nrow = vcount(graph), ncol = 1)
+size_matrix[random_index, 1] <- 1
+
 #infect neighbors of sampled node
 for(neighbor in neighbors(graph, V(graph)[random_index])) {
   V(graph)[neighbor]$infected=T
   V(graph)[neighbor]$color="red"
 }
 
-plot(graph, rescale = TRUE, ylim=c(-.8,.8),xlim=c(-.8,.8), edge.arrow.size = .25, asp = 0, vertex.label=NA, vertex.size=2, layout=layout.drl(graph))
+plot(graph, rescale = TRUE, ylim=c(-.8,.8), xlim=c(-.8,.8), edge.arrow.size = .25, asp = 0, 
+     vertex.label=NA, vertex.size=2+3*as.matrix(size_matrix), layout=layout.drl(graph))
 
 
