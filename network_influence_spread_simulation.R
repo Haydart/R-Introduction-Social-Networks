@@ -5,7 +5,7 @@ raw_graph_data = read.csv(file="social_network_graph_data.csv", header=FALSE, se
 graph_data <- raw_graph_data[3:nrow(raw_graph_data), 1:2]
 str(graph_data)
 
-raw_graph <- graph_from_data_frame(graph_data, directed=FALSE)
+raw_graph <- graph_from_data_frame(graph_data, directed=TRUE)
 graph = simplify(raw_graph)
 
 # check if graph has 167 vertices & 5783 edges
@@ -25,6 +25,7 @@ print(V(graph)$infected)
 random_index = sample(1:vcount(graph), 1)
 print(random_index)
 V(graph)[random_index]$infected = T
+V(graph)[random_index]$color = "yellow"
 
 #infect neighbors of sampled node
 for(neighbor in neighbors(graph, V(graph)[random_index])) {
@@ -32,6 +33,6 @@ for(neighbor in neighbors(graph, V(graph)[random_index])) {
   V(graph)[neighbor]$color="red"
 }
 
-plot(graph, rescale = TRUE, ylim=c(-.8,.8),xlim=c(-.8,.8), asp = 0, vertex.label=NA, vertex.size=2, layout=layout.drl(graph))
+plot(graph, rescale = TRUE, ylim=c(-.8,.8),xlim=c(-.8,.8), edge.arrow.size = .25, asp = 0, vertex.label=NA, vertex.size=2, layout=layout.drl(graph))
 
 
