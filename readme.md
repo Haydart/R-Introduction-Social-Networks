@@ -103,24 +103,18 @@
 | **Przebieg**                      | **Opis**                          |
 |-----------------------------------|-----------------------------------|
 | Iteration 1 infected 136 nodes.   | W przypadku wybrania węzła o      |
-|                                   | najwyższej wyliczonej wartości    |
-| Iteration 2 infected 2 nodes.     | betweenness widzimy, jak duże     |
-|                                   | znaczenie ma poprawne wybranie    |
-| Iteration 3 infected 0 nodes.     | węzła centralnego. Nie dość, że   |
-|                                   | trzecia iteracja nie istnieje, to |
-| Iteration 4 infected 0 nodes.     | jeszcze miażdżąca większość       |
-|                                   | węzłów zostaje „zarażona" już w   |
-| Iteration 5 infected 0 nodes.     | pierwszej iteracji. Jest to       |
-|                                   | najlepszy wynik dla tej sieci pod |
-| Iteration 6 infected 0 nodes.     | względem szybkości propagacji     |
+| Iteration 2 infected 2 nodes.     | najwyższej wyliczonej wartości    |
+| Iteration 3 infected 0 nodes.     | betweenness widzimy, jak duże     |
+| Iteration 4 infected 0 nodes.     | znaczenie ma poprawne wybranie    |
+| Iteration 5 infected 0 nodes.     | węzła centralnego. Nie dość, że   |
+| Iteration 6 infected 0 nodes.     | trzecia iteracja nie istnieje, to |
+| Iteration 7 infected 0 nodes.     | jeszcze miażdżąca większość       |
+| Iteration 8 infected 0 nodes.     | węzłów zostaje „zarażona" już w   |
+| Iteration 9 infected 0 nodes.     | pierwszej iteracji. Jest to       |
+| Iteration 10 infected 0 nodes.    | najlepszy wynik dla tej sieci pod |
+|                                   | względem szybkości propagacji     |
 |                                   | danych.                           |
-| Iteration 7 infected 0 nodes.     |                                   |
 |                                   |                                   |
-| Iteration 8 infected 0 nodes.     |                                   |
-|                                   |                                   |
-| Iteration 9 infected 0 nodes.     |                                   |
-|                                   |                                   |
-| Iteration 10 infected 0 nodes.    |                                   |
 
 
 **Dodatek**
