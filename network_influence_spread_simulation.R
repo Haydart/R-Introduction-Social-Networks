@@ -8,7 +8,7 @@ str(graph_data)
 
 raw_graph <- graph_from_data_frame(graph_data, directed=TRUE)
 #graph <- simplify(raw_graph)
-graph <- erdos.renyi.game(p.or.m=.2, n=10, directed = TRUE)
+graph <- erdos.renyi.game(p.or.m=.15, n=15, directed = TRUE)
 
 # check if graph has 167 vertices & 5783 edges
 print(vcount(graph))
@@ -17,7 +17,7 @@ print(ecount(graph))
 # CONDUCT DISTRIBUTION SIMULATION
 
 random_attempts_count <- 1
-iterations_within_attempt <- 2
+iterations_within_attempt <- 3
 legend_descriptions <- lapply(c(1:iterations_within_attempt), paste0, " gen")
 plot_file_names <- lapply(c(1:random_attempts_count), paste0, "attempt.jpg")
 plot_colors <- c("black", "blanchedalmond", "blue", "blueviolet", "cyan", "darkgoldenrod1", "darkolivegreen1", "firebrick1", "deeppink", "lightskyblue")
