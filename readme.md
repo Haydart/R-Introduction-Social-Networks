@@ -1,8 +1,7 @@
 **Losowa próba 1**
 
-+-----------------------------------+-----------------------------------+
 | **Przebieg**                      | **Opis**                          |
-+===================================+===================================+
+|-----------------------------------|-----------------------------------|
 | Iteration 1 infected 38 nodes.    | Losowo wybrany wierzchołek, który |
 |                                   | uczyniono zaczątkiem              |
 | Iteration 2 infected 99 nodes.    | rozprowadzania informacji,        |
@@ -22,14 +21,12 @@
 | Iteration 9 infected 0 nodes.     | sąsiadami mają tylko w jedną      |
 |                                   | stronę.                           |
 | Iteration 10 infected 0 nodes.    |                                   |
-+-----------------------------------+-----------------------------------+
 
 
 **Losowa próba 2**
 
-+-----------------------------------+-----------------------------------+
 | **Przebieg**                      | **Opis**                          |
-+===================================+===================================+
+|-----------------------------------|-----------------------------------|
 | Iteration 1 infected 1 nodes.     | W tym przypadku wylosowano węzeł  |
 |                                   | mało znaczący w sieci, mający     |
 | Iteration 2 infected 62 nodes.    | tylko jednego bezpośredniego      |
@@ -49,14 +46,12 @@
 | Iteration 9 infected 0 nodes.     |                                   |
 |                                   |                                   |
 | Iteration 10 infected 0 nodes.    |                                   |
-+-----------------------------------+-----------------------------------+
 
 
 **Losowa próba 3**
 
-+-----------------------------------+-----------------------------------+
 | **Przebieg**                      | **Opis**                          |
-+===================================+===================================+
+|-----------------------------------|-----------------------------------|
 | Iteration 1 infected 12 nodes.    | Trzecia próba pokazuje przypadek, |
 |                                   | gdzie węzeł początkowy nie        |
 | Iteration 2 infected 125 nodes.   | był mocno centralny, ale          |
@@ -76,14 +71,12 @@
 | Iteration 9 infected 0 nodes.     |                                   |
 |                                   |                                   |
 | Iteration 10 infected 0 nodes.    |                                   |
-+-----------------------------------+-----------------------------------+
 
 
 **Losowa próba 4**
 
-+-----------------------------------+-----------------------------------+
 | **Przebieg**                      | **Opis**                          |
-+===================================+===================================+
+|-----------------------------------|-----------------------------------|
 | Iteration 1 infected 82 nodes.    | W czwartym przypadku wylosowany   |
 |                                   | węzeł jest lepszy od tego w       |
 | Iteration 2 infected 55 nodes.    | pierwszym, ponieważ już w         |
@@ -103,14 +96,12 @@
 | Iteration 9 infected 0 nodes.     |                                   |
 |                                   |                                   |
 | Iteration 10 infected 0 nodes.    |                                   |
-+-----------------------------------+-----------------------------------+
 
 
 **Próba największego "betweenness"**
 
-+-----------------------------------+-----------------------------------+
 | **Przebieg**                      | **Opis**                          |
-+===================================+===================================+
+|-----------------------------------|-----------------------------------|
 | Iteration 1 infected 136 nodes.   | W przypadku wybrania węzła o      |
 |                                   | najwyższej wyliczonej wartości    |
 | Iteration 2 infected 2 nodes.     | betweenness widzimy, jak duże     |
@@ -130,7 +121,6 @@
 | Iteration 9 infected 0 nodes.     |                                   |
 |                                   |                                   |
 | Iteration 10 infected 0 nodes.    |                                   |
-+-----------------------------------+-----------------------------------+
 
 
 **Dodatek**
