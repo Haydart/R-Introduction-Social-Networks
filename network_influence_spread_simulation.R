@@ -16,7 +16,7 @@ print(ecount(graph))
 
 # CONDUCT DISTRIBUTION SIMULATION
 
-random_attempts_count <- 1
+random_attempts_count <- 4
 iterations_within_attempt <- 10
 legend_descriptions <- lapply(c(1:iterations_within_attempt), paste0, " gen")
 plot_file_names <- lapply(c(1:random_attempts_count), paste0, "attempt.jpg")
@@ -32,13 +32,13 @@ for(attempt in 1:random_attempts_count) {
   }
   
   # set a random node to be infected
-  # first_infected_index <- sample(1:vcount(graph), 1)
-  # print(random_index)
+  first_infected_index <- sample(1:vcount(graph), 1)
+  print(random_index)
   
   # start infection from the node with highest betweenness value
-  first_infected_index <- V(graph)[betweenness(graph) == max(betweenness(graph))]
-  print(betweenness(graph))
-  print(paste("The node with highest betweenness is ", first_infected_index))
+  #first_infected_index <- V(graph)[betweenness(graph) == max(betweenness(graph))]
+  #print(betweenness(graph))
+  #print(paste("The node with highest betweenness is ", first_infected_index))
   
   V(graph)[first_infected_index]$infected <- T
   V(graph)[first_infected_index]$color <- plot_colors[1]
@@ -62,6 +62,7 @@ for(attempt in 1:random_attempts_count) {
     neighbors_to_be_infected <- setdiff(neighbors_to_be_infected, V(graph)[infected == T])
     
     infection_sources <- neighbors_to_be_infected
+    print(paste("Iteration", index, " infected ", length(infection_sources), " nodes."))
     
     #infect neighbors of sampled nodes
     for(neighbor in neighbors_to_be_infected) {
