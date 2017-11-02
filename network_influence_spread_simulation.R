@@ -24,10 +24,10 @@ print(V(graph)$infected)
 random_index = sample(1:vcount(graph), 1)
 V(graph)[random_index]$infected = T
 
-plot(graph, rescale = TRUE, ylim=c(-.65,.65),xlim=c(-.65,.65), asp = 0, label=NA, vertex.size=5)
+plot(graph, rescale = TRUE, ylim=c(-.8,.8),xlim=c(-.8,.8), asp = 0, vertex.label=NA, vertex.size=2, layout=layout.drl(graph))
 
 #infect neighbors of sampled node
-for(neighbor in neighbors(graph, V(graph)[20])){
+for(neighbor in neighbors(graph, V(graph)[random_index])){
   V(graph)[neighbor]$infected=T
   V(graph)[neighbor]$color="red"
 }
