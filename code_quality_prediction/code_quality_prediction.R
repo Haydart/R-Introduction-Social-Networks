@@ -37,12 +37,12 @@ combined <- combined %>% select (-c(X, Project, Version, Class))
 print(mlr::summarizeColumns(combined) %>% knitr::kable(digits=2))
 
 # missing values imputation based on mean values
-imp <- impute(
-  combined,
-  classes = list(
-    factor = imputeMode(), integer = imputeMean(), numeric = imputeMean()
-  )
-)
+#imp <- impute(
+#  combined,
+#  classes = list(
+#    factor = imputeMode(), integer = imputeMean(), numeric = imputeMean()
+#  )
+#)
 
 combined <- imp$data
 
@@ -61,5 +61,31 @@ print(summarizeColumns(train) %>% knitr::kable(digits=2))
 # Build prediction model
 # Specify the prediction task
 trainTask <- makeClassifTask(data=train, target="isBuggy", positive = "TRUE")
+testTask <- makeClassifTask(data=test, target="isBuggy", positive = "TRUE")
 print(trainTask)
+print(testTask)
 
+# calculate the data feature importance
+#featureImportance <- mlr::generateFilterValuesData(testTask, method = "information.gain")
+#mlr::plotFilterValues(featureImportance)
+
+# build the logistic regression prediction model
+# specify the Learner
+
+logisticRegression.learner <- mlr::makeLearner("classif.logreg", predict.type = "response")
+#train the learner
+logisticRegression.model <- mlr::train(logisticRegression.learner, task = trainTask)
+#predict values of DV coefficient
+pred <- predict(logisticRegression.model, task=testTask)
+#Eval the model
+performanceMeasure <- mlr::performance(pred, measures = list(mcc, mmce, acc, f1, kappa))
+print(performanceMeasure)
+
+# calculate the confusion matrix
+confusionMatrix <- mlr::calculateConfusionMatrix(pred)
+print(confusionMatrix)
+
+# experiment to get the best mcc value
+
+# accuracy - measures the misleading of the classification TN + TP / sum(TN, TP)
+# mcc - based on all 4 confundants
