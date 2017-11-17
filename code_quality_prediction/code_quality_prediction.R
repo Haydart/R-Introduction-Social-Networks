@@ -45,4 +45,21 @@ imp <- impute(
 )
 
 combined <- imp$data
+
+# now there are no empty cells
 print(summarizeColumns(combined) %>% knitr::kable(digits=2))
+
+#normalize traits for better prediction
+combined <- normalizeFeatures(combined, target="isBuggy") # target (isBuggy) cannot be normalized, wouldn't make any sense
+print(summarizeColumns(combined) %>% knitr::kable(digits=2))
+
+#finish data processing, split train & test once again for prediction process & delete "dataset"
+train <- combined %>% filter(dataset=="train") %>% select(-(dataset))
+test <- combined %>% filter(dataset=="test") %>% select(-(dataset)) 
+print(summarizeColumns(train) %>% knitr::kable(digits=2))
+
+# Build prediction model
+# Specify the prediction task
+trainTask <- makeClassifTask(data=train, target="isBuggy", positive = "TRUE")
+print(trainTask)
+
